@@ -6,7 +6,14 @@ import dagger.Provides;
 @Module
 public class FruitModule {
     @Provides
-    public Fruit provideFruit() {
+    @AppleFruit
+    public Fruit provideApple() {
         return new Apple();
+    }
+
+    @Provides
+    @BananaFruit
+    public Fruit provideBanana() {
+        return new Banana();
     }
 }
