@@ -5,36 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jon.dagger2sample.R;
-import com.jon.dagger2sample.bean.DaggerActivityComponent;
-import com.jon.dagger2sample.bean.DaggerFruitComponent;
-import com.jon.dagger2sample.bean.DaggerMallComponent;
-import com.jon.dagger2sample.bean.Mall;
+import com.jon.dagger2sample.bean.Child;
+import com.jon.dagger2sample.bean.DaggerFatherComponent;
+import com.jon.dagger2sample.bean.FatherComponent;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
+
     @Inject
-    Mall mall;
+    Child child;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//       DaggerActivityComponent.builder().build().inject(this);
-//       car.getName();
-//
-//       String str = fruit.toString();
+        FatherComponent fatherComponent = DaggerFatherComponent.create();
+        fatherComponent.buildChildComponent().build().inject(this);
 
-        DaggerActivityComponent
-                .builder()
-                .mallComponent(DaggerMallComponent
-                        .builder()
-                        .fruitComponent(DaggerFruitComponent
-                                .create())
-                        .build())
-                .build()
-                .inject(this);
+        child.toString();
 
     }
 }
