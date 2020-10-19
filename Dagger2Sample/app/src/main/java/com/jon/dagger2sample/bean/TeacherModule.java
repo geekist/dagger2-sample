@@ -4,11 +4,10 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class MallModule {
+public class TeacherModule {
 
     @Provides
-    Mall provideMal(@AppleFruit Fruit fruit) {
-        return new Mall(fruit);
+    public  Teacher provideTeacher() {
+        return new Teacher();
     }
-
 }

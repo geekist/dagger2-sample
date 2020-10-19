@@ -5,36 +5,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jon.dagger2sample.R;
-import com.jon.dagger2sample.bean.DaggerActivityComponent;
-import com.jon.dagger2sample.bean.DaggerFruitComponent;
-import com.jon.dagger2sample.bean.DaggerMallComponent;
-import com.jon.dagger2sample.bean.Mall;
+
+import com.jon.dagger2sample.bean.DaggerStudentComponent;
+import com.jon.dagger2sample.bean.DaggerTeacherComponent;
+import com.jon.dagger2sample.bean.Student;
+import com.jon.dagger2sample.bean.TeacherComponent;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
+
+    //@Inject
+    //Teacher teacher;
+
     @Inject
-    Mall mall;
+    Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//       DaggerActivityComponent.builder().build().inject(this);
-//       car.getName();
-//
-//       String str = fruit.toString();
+       // Teacher teacher = DaggerTeacherComponent.builder().build().getTeacher();
 
-        DaggerActivityComponent
-                .builder()
-                .mallComponent(DaggerMallComponent
-                        .builder()
-                        .fruitComponent(DaggerFruitComponent
-                                .create())
-                        .build())
-                .build()
-                .inject(this);
+        TeacherComponent teacherComponent = DaggerTeacherComponent.create();
+        DaggerStudentComponent.builder().teacherComponent(teacherComponent).build().inject(this);
+        student.toString();
+        //  teacher.toString();
 
     }
 }
