@@ -5,7 +5,6 @@ import javax.inject.Inject;
 public class Car {
     public String name;
 
-    @Inject
     public Car(String name) {
         this.name = name;
     }

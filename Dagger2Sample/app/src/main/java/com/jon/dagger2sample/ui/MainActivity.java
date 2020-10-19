@@ -8,10 +8,14 @@ import com.jon.dagger2sample.R;
 import com.jon.dagger2sample.bean.Car;
 import com.jon.dagger2sample.bean.DaggerActivityComponent;
 import com.jon.dagger2sample.bean.Fruit;
+import com.jon.dagger2sample.bean.ThirdPartObj;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    ThirdPartObj tpObj;
 
     @Inject
     Car car;
@@ -26,10 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
        DaggerActivityComponent.builder().build().inject(this);
        car.getName();
-
-       String str = fruit.toString();
-
-
+       fruit.toString();
+       tpObj.toString();
 
     }
 }
