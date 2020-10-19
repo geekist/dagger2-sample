@@ -4,10 +4,9 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class TeacherModule {
-
+public class CarModule {
     @Provides
-    public  Teacher provideTeacher() {
-        return new Teacher();
+    public Car provideCar() {
+        return new Car();
     }
 }
