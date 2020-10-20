@@ -4,7 +4,7 @@ import com.jon.dagger2sample.ui.MainActivity;
 
 import dagger.Component;
 
-@Component(modules = {FruitModule.class})
+@Component(modules = {TeacherModule.class,FruitModule.class})
 public interface ActivityComponent {
     public void inject(MainActivity activity);
 }

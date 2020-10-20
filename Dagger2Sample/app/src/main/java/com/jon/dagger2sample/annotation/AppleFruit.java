@@ -1,4 +1,4 @@
-package com.jon.dagger2sample.bean;
+package com.jon.dagger2sample.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

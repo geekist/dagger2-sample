@@ -1,6 +1,7 @@
 package com.jon.dagger2sample.bean;
 
-import javax.inject.Named;
+import com.jon.dagger2sample.annotation.AppleFruit;
+import com.jon.dagger2sample.annotation.BananaFruit;
 
 import dagger.Module;
 import dagger.Provides;
@@ -8,14 +9,12 @@ import dagger.Provides;
 @Module
 public class FruitModule {
     @Provides
-    //@Named("Apple")
     @AppleFruit
     public Fruit provideApple() {
         return new Apple();
     }
 
     @Provides
-    //@Named("Banana")
     @BananaFruit
     public Fruit provideBanana() {
         return new Banana();
