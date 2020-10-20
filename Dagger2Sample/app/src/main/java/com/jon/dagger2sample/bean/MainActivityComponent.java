@@ -5,7 +5,6 @@ import com.jon.dagger2sample.ui.MainActivity;
 import dagger.Component;
 
 @Component
-public interface ActivityFruitComponent {
-
+public interface MainActivityComponent {
     public void inject(MainActivity activity);
 }
