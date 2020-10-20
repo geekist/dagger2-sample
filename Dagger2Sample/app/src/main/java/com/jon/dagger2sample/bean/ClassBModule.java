@@ -7,7 +7,8 @@ import dagger.Provides;
 public class ClassBModule {
 
     @Provides
-    ClassB provideClassB() {
-        return new ClassB();
+    ClassB provideClassB(ClassA cA) {
+        return new ClassB(cA);
     }
+
 }

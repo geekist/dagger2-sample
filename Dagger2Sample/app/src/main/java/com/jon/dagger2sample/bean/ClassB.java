@@ -3,7 +3,7 @@ package com.jon.dagger2sample.bean;
 public class ClassB {
     private ClassA cA;
 
-    public ClassB() {
-
+    public ClassB(ClassA cA) {
+        this.cA = cA;
     }
 }
