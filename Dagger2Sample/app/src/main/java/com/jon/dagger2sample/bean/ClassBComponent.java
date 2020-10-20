@@ -4,7 +4,7 @@ import com.jon.dagger2sample.ui.MainActivity;
 
 import dagger.Component;
 
-@Component(modules = CarModule.class,dependencies = EngineComponent.class)
-public interface MainActivityComponent {
+@Component(modules = ClassBModule.class,dependencies = ClassAComponent.class)
+public interface ClassBComponent {
     public void inject(MainActivity activity);
 }
