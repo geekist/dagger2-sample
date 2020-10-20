@@ -5,12 +5,12 @@ import com.jon.dagger2sample.ui.MainActivity;
 
 import dagger.Subcomponent;
 
-@Subcomponent(modules = ChildModule.class)
-public interface ChildComponent {
+@Subcomponent(modules = ClassBModule.class)
+public interface ClassBComponent {
     void inject(MainActivity activity);
 
     @Subcomponent.Builder
     interface Builder {
-        ChildComponent build();
+        ClassBComponent build();
     }
 }

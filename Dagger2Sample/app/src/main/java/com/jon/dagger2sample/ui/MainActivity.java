@@ -3,28 +3,29 @@ package com.jon.dagger2sample.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.jon.dagger2sample.R;
-import com.jon.dagger2sample.bean.Child;
-import com.jon.dagger2sample.bean.DaggerFatherComponent;
-import com.jon.dagger2sample.bean.FatherComponent;
+import com.jon.dagger2sample.bean.ClassB;
+import com.jon.dagger2sample.bean.ClassAComponent;
+import com.jon.dagger2sample.bean.DaggerClassAComponent;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    Child child;
+    ClassB classB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FatherComponent fatherComponent = DaggerFatherComponent.create();
-        fatherComponent.buildChildComponent().build().inject(this);
+        ClassAComponent classAComponent = DaggerClassAComponent.builder().build();
+        classAComponent.buildClassBComponent().build().inject(this);
 
-        child.toString();
-
+        int hashCode;
+        Log.d("msg","hash code is: " + classB.hashCode());
     }
 }

@@ -4,9 +4,9 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ChildModule {
+public class ClassBModule {
     @Provides
-    public Child provideChild(Father father) {
-        return new Child(father);
+    public ClassB provideClassB(ClassA classA) {
+        return new ClassB(classA);
     }
 }
