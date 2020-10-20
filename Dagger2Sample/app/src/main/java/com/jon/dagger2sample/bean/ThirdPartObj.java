@@ -3,15 +3,5 @@ package com.jon.dagger2sample.bean;
 import androidx.annotation.NonNull;
 
 public class ThirdPartObj {
-
-    public String name;
-    public int id;
-
-
-    @NonNull
-    @Override
-    public String toString() {
-        return "I am a third part object";
-    }
-
+    //第三方库，无法得到构造器类的实现，无法再构造器中添加@Inject标注
 }
